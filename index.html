@@ -55,11 +55,11 @@
         <div ng-hide="checkout.cartIsEmpty()">
           <table>
               <tr ng-repeat="product in checkout.selectedProducts">
-                <td class="col-md-5"><strong>{{product.description}}</strong></td>
-                <td class="col-md-2">{{product.supplier}}</td>
-                <td class="col-md-3">{{product.sku}}</td>
-                <td class="col-md-1"><select ng-model="product.quantity" ng-options="n for n in checkout.maxQuantity()"></select></td>
-                <td class="col-md-1"><button ng-click="checkout.removeFromCart(product)" class="fas fa-trash delete-product"></button></td>
+                <td style="width: 50%;"><strong>{{product.description}}</strong></td>
+                <td style="width: 13%;">{{product.supplier}}</td>
+                <td style="width: 16%;">{{product.sku}}</td>
+                <td style="width: 10%;"><select ng-model="product.quantity" ng-options="n for n in checkout.maxQuantity()"></select></td>
+                <td style="width: 10%;"><button ng-click="checkout.removeFromCart(product)" class="fas fa-trash delete-product"></button></td>
               </tr>
           </table>
           <div class="checkout-button-wrapper">

@@ -9,7 +9,7 @@ table {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 	width: 100% !important;
-	font-size: 17px;
+	font-size: 15px;
 }
 td, th {
 	/*min-width: 100px;*/
@@ -56,7 +56,7 @@ button.add-product:focus {
 }
 div.checkout-table-wrapper {
 	margin: 20px 70px 0 70px;
-	padding: 20px;
+	padding: 25px;
 	border-radius: 15px;
 	background: #fff;
 	line-height: 30px;
@@ -110,6 +110,7 @@ button.checkout:hover {
 .header-fixed > thead > tr > th,
 .header-fixed > tbody > tr > td {
     display: block;
+    font-size: 17px;
 }
 .header-fixed > tbody > tr:after,
 .header-fixed > thead > tr:after {
