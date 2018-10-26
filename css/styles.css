@@ -142,3 +142,21 @@ button.checkout:hover {
     width: 7%;
     float: left;
 }
+
+
+
+@media only screen and (max-width: 992px) {
+    body {
+        background-color: lightblue;
+    }
+    .container {
+        max-width: none;
+    }
+    div.products-table-wrapper {
+        padding: 0;
+        margin-top: 10px;
+    }
+    div.checkout-table-wrapper {
+        margin: 0;
+    }
+}
