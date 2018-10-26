@@ -15,7 +15,7 @@
   
 </head>
 <body >
-  
+
 <div class="wrapper">
 
   <div ng-app="checkout" ng-controller="CheckoutController as checkout" class="container">
@@ -58,7 +58,7 @@
           <table>
               <tr ng-repeat="product in checkout.selectedProducts">
                 <td style="width: 50%;"><strong>{{product.description}}</strong></td>
-                <td style="width: 13%;">{{product.supplier}}</td>
+                <td style="width: 14%;">{{product.supplier}}</td>
                 <td style="width: 16%;">{{product.sku}}</td>
                 <td style="width: 10%;"><select ng-model="product.quantity" ng-options="n for n in checkout.maxQuantity()"></select></td>
                 <td style="width: 10%;"><button ng-click="checkout.removeFromCart(product)" class="fas fa-trash delete-product"></button></td>
