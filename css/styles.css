@@ -55,7 +55,7 @@ div.search-wrapper {
 }
 div.products-table-wrapper {
 	height: 50vh;
-	padding: 15px 30px 30px 30px;
+	padding: 15px 30px 30px 67px;
 	overflow:scroll;
 }
 button.add-product:focus {
@@ -162,6 +162,12 @@ button.checkout:hover {
         margin-top: 10px;
     }
     div.checkout-table-wrapper {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    div.page-wrapper {
         margin: 0;
     }
 }
