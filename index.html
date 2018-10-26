@@ -2,75 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Torch Checkout</title>
+  <title>Torch Order Builder</title>
 
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   
   <script src="https://code.angularjs.org/snapshot/angular.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
-  <script src="checkout.js"></script>
-  <script src="list_exercise_data.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/list_exercise_data.js"></script>
   
 </head>
 <body >
-<!--   <div ng-app="checkout" ng-controller="CheckoutController as invoice">
-  <b>Invoice:</b>
-  <div>
-    Quantity: <input type="number" min="0" ng-model="invoice.qty" required >
-  </div>
-  <div>
-    Costs: <input type="number" min="0" ng-model="invoice.cost" required >
-    <select ng-model="invoice.inCurr">
-      <option ng-repeat="c in invoice.currencies">{{c}}</option>
-    </select>
-  </div>
-  <div>
-    <b>Total:</b>
-    <span ng-repeat="c in invoice.currencies">
-      {{invoice.total(c) | currency:c}}
-    </span><br>
-    <button class="btn" ng-click="invoice.pay()">Pay</button>
-  </div>
-</div> -->
 
   <div ng-app="checkout" ng-controller="CheckoutController as checkout" class="container">
 
-    <input ng-model="searchProducts" placeholder="enter search term here">
+    <h1>Order Builder</h1>
+    
+    <div class="page-wrapper">
+      <div class="search-wrapper">
+        <input ng-model="searchProducts" class="search-bar" placeholder="Search by name, supplier, or SKU">
+        <i id="search-icon" class="fa fa-search"></i>
+      </div>
+      <div class="products-table-wrapper">
+        <table class="header-fixed">
+          <thead>
+            <tr>
+              <th class="product col-xs-3">Product</th>
+              <th class="supplier col-xs-3">Supplier</th>
+              <th class="sku col-xs-3">SKU</th>
+              <th class="add col-xs-3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="product in checkout.products | filter : searchProducts">
+              <td class="product col-xs-3">{{product.description}}</td>
+              <td class="supplier col-xs-3">{{product.supplier}}</td>
+              <td class="sku col-xs-3">{{product.sku}}</td>
+              <td class="add col-xs-3"><button class="add-product btn btn-primary" ng-click="checkout.addToCart(product)">Buy</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-    <div class="products-table" style="height:300px;overflow:scroll;">
-      <table>
-          <tr>
-            <th>Company</th>
-            <th>Product</th>
-            <th>SKU</th>
-            <th></th>
-          </tr>
-          <tr ng-repeat="product in checkout.products | filter : searchProducts">
-            <td>{{product.supplier}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.sku}}</td>
-            <td><button style="width: 50px; display: block;" ng-click="checkout.addToCart(product)">Add</button></td>
-          </tr>
-      </table>
-    </div>
+      <div class="checkout-table-wrapper">
+        <h2>My Cart</h2>
+        <span ng-show="checkout.cartIsEmpty()">
+          <strong>Your cart is currently empty</strong>&mdash;scroll through the products above or use the search bar to find
+          what you need.
+        </span>
+        <div ng-hide="checkout.cartIsEmpty()">
+          <table>
+              <tr ng-repeat="product in checkout.selectedProducts">
+                <td class="col-md-5"><strong>{{product.description}}</strong></td>
+                <td class="col-md-2">{{product.supplier}}</td>
+                <td class="col-md-3">{{product.sku}}</td>
+                <td class="col-md-1"><select ng-model="product.quantity" ng-options="n for n in checkout.maxQuantity()"></select></td>
+                <td class="col-md-1"><button ng-click="checkout.removeFromCart(product)" class="fas fa-trash delete-product"></button></td>
+              </tr>
+          </table>
+          <div class="checkout-button-wrapper">
+            <button class="checkout">Checkout</button>
+          </div>
+        </div>
+      </div>
 
-    <div class="checkout-table">
-      <table>
-          <tr>
-            <th>Company</th>
-            <th>Product</th>
-            <th>SKU</th>
-            <th>Quantity</th>
-          </tr>
-          <tr ng-repeat="product in checkout.selectedProducts">
-            <td>{{product.supplier}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.sku}}</td>
-            <td>{{product.quantity}}</td>
-          </tr>
-      </table>
     </div>
     
   </div>

@@ -289,7 +289,7 @@ window.torch.testData = [
 ];
 
 // automatically assign unique IDs, set quantity to 0 and addedToCart to false
-for (var i = 1; i < window.torch.testData.length; i++) {
+for (var i = 0; i < window.torch.testData.length; i++) {
     window.torch.testData[i].id = i;
     window.torch.testData[i].quantity = 0;
     window.torch.testData[i].addedToCart = false;

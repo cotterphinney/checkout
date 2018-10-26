@@ -1,0 +1,144 @@
+body {
+	margin: 50px 0;
+	background: #fab1a0;
+}
+h1 {
+	text-align: center;
+}
+table {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	width: 100% !important;
+	font-size: 17px;
+}
+td, th {
+	/*min-width: 100px;*/
+	padding: 5px 1px;
+}
+div.page-wrapper {
+	margin: 0 50px;
+}
+div.search-wrapper {
+	width: 100%;
+	text-align: center;
+}
+.search-bar {
+	margin: 20px 0 10px 20px;
+	width: 356px;
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 17px;
+    line-height: 1.318;
+    padding-left: 20px;
+    border-radius: 25px;
+    border: 0;
+}
+.search-bar:focus {
+	outline: none;
+}
+#search-icon {
+    position: relative;
+    z-index: 1;
+    left: -40px;
+    font-size: 20px;
+    top: 1px;
+    color: #7B7B7B;
+    cursor:pointer;
+    width: 0;
+}
+div.products-table-wrapper {
+	height:300px;
+	padding: 15px 30px 30px 30px;
+	overflow:scroll;
+}
+button.add-product:focus {
+	outline: none;
+}
+div.checkout-table-wrapper {
+	margin: 20px 70px 0 70px;
+	padding: 20px;
+	border-radius: 15px;
+	background: #fff;
+	line-height: 30px;
+}
+.checkout-button-wrapper {
+	width: 100%;
+	text-align: center;
+}
+button.delete-product {
+	border-radius: 22px;
+    color: #ababab;
+    width: 35px;
+    height: 35px;
+}
+button.checkout {
+	color: white;
+	width: 200px;
+    background-color: #1abc9c;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.4;
+    border-radius: 4px;
+    padding: 10px 15px;
+    display: inline-block;
+    margin-top: 15px;
+    text-align: center;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transition: border .25s linear, color .25s linear, background-color .25s linear;
+}
+button.checkout:hover {
+	text-decoration: none;
+    background-color: #48c9b0;
+    border-color: #48c9b0;
+}
+
+
+
+
+
+
+.header-fixed {
+    width: 100% 
+}
+.header-fixed > thead,
+.header-fixed > tbody,
+.header-fixed > thead > tr,
+.header-fixed > tbody > tr,
+.header-fixed > thead > tr > th,
+.header-fixed > tbody > tr > td {
+    display: block;
+}
+.header-fixed > tbody > tr:after,
+.header-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.header-fixed > tbody {
+    overflow-y: auto;
+    height: 220px;
+}
+.header-fixed > tbody > tr > td.product,
+.header-fixed > thead > tr > th.product {
+    width: 50%;
+    float: left;
+}
+.header-fixed > tbody > tr > td.supplier,
+.header-fixed > thead > tr > th.supplier {
+    width: 23%;
+    float: left;
+}
+.header-fixed > tbody > tr > td.sku,
+.header-fixed > thead > tr > th.sku {
+    width: 17%;
+    float: left;
+}
+.header-fixed > tbody > tr > td.add,
+.header-fixed > thead > tr > th.add {
+    width: 7%;
+    float: left;
+}

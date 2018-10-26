@@ -1,0 +1,20 @@
+- Said that it should be single page -- ideally I think this is split into two pages, the first being the marketplace of products where the user can browse and add items to their cart and the second being the checkout. Ties into "How would you extend the design to work for a large number." This is really just my best shot at cramming them both into one page.
+
+- 
+
+
+
+
+
+
+
+The sample JSON set of items you will be given is going to be small in number. How would you extend the design to work for a large number (e.g., > 10,000) of items?
+
+	- store the products in a database
+	- split across multiple pages: a marketplace with categories where users can browse and a checkout-- separate controllers for each
+	- 
+
+How might this design be adapted to a mobile or tablet setting? What aspects would change? What would stay the same?
+
+	- again, multiple pages. 
+	- 
