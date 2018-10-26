@@ -54,7 +54,7 @@ button.add-product:focus {
 	outline: none;
 }
 div.checkout-table-wrapper {
-	margin: 20px 70px 0 70px;
+	margin: 0px 70px 0 70px;
 	padding: 25px;
 	border-radius: 15px;
 	background: #fff;
